@@ -3,6 +3,9 @@ Game Of Life Massive Multiplayer
 
 The goal of this project is to implement different technologies for a massive multiplayer game of life website.
 
+As such the repository contains all the files that have changes in them for a default nodejs express installation on hhtps://golmm.online
+
+
 Current WIP website is hosted on https://golmm.online/
 
 Uses Nodejs and openlayer. More npm packages to follow depending on the needs of the website.
