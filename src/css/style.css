@@ -1,0 +1,22 @@
+html, body {
+  height: 100%;
+}
+body {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  font-family: helvetica;
+}
+
+/* <'grid-template'> values */
+#container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+
+#container > div {
+  background-color: #8ca0ff;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+}
