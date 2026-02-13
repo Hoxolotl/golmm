@@ -9,10 +9,24 @@
     <!-- /Component CSS -->
     <!-- Page CSS -->
     <style>
+      /* grid (page/home) */
       
+        .page-grid {
+        	display: grid;
+        	grid-template-areas: "left center right";
+          grid-template-columns: 1fr 2fr 1fr;
+        }
+      
+      
+      .page-grid-column1 { grid-area: left;     background-color: green;}
+      .page-grid-column2 { grid-area: center;     background-color: blue;}
+      .page-grid-column3 { grid-area: right;     background-color: orange;}
     </style>
     <!-- /Page CSS -->
     <!-- Head HTML -->
+    <!-- css (baseComponent/header) -->
+    <link rel="stylesheet" type="text/css" integrity="sha256-k2/8zcNbxVIh5mnQ52A0r3a6jAgMGxFJFE2707UxGCk=" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/theds.css">
     
     <!-- /Head HTML -->
     <script>
@@ -48,6 +62,7 @@
           /* /Keyboard shortcuts */
           /* Routes */
           routes: {
+            // page/home
             "/" : async function(){
             	simplyApp.view.page = "home"
             }
@@ -68,24 +83,36 @@
   </head>
   <body>
     <!-- Body HTML -->
-    
+    <!-- d3js (baseComponent/header) -->
+    <script type="module" src="js/GOLmap.js"></script>
+    <script type="module" src="js/test.js"></script>
     <!-- /Body HTML -->
     <!-- Component HTML templates -->
-    
+    <!-- component/map-->
+    <template id="map">
+      <h1>map</h1>
+    <canvas id="container" width="640" height="480"></canvas>
+    </template>
     <!-- /Component HTML templates -->
     <div class="main" data-simply-field="page" data-simply-content="template">
       <!-- Page HTML templates -->
+      <!-- page/home-->
       <template data-simply-template="home">
         <h1>GOLMM</h1>
-      <form action="" method="get" class="form-example">
-        <div class="form-example">
-          <label for="email">Issuer </label>
-          <input type="url" name="issuer" id="issuer" required></input>
+      
+      <div class="page-grid">
+        <div class="page-grid-column1">
+          <span>player area</span>
         </div>
-      <div class="form-example">
-        <input type="submit" value="acces pod"></input>
+      
+        <div class="page-grid-column2">
+          <simply-render rel="map"></simply-render>
+        </div>
+      
+        <div class="page-grid-column3">
+          <span>leaderboard and multiplayer area</span>
+        </div>  
       </div>
-      </form>
       </template>
       <!-- /Page HTML templates -->
     </div>
